@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link href="booting.css" rel="stylesheet">
+  <script>
+    setTimeout(function () {
+      window.location.href = "home.html"
+    }, 999_999)
+  </script>
+</head>
+
+<body>
+  <div id="bootingScreen"> Booting Website...
+  </div>
+</body>
+
+<script>
+  const bootingText = document.getElementById("bootingScreen");
+  document.addEventListener("keydown", function (event) {
+    if (event.ctrlKey && event.key === 'c') {
+      event.preventDefault()
+
+      bootingText.innerText = "Booting Process Canceled, Redirecting to Home!"
+      setTimeout(() => { }, 1000)
+
+      window.location.href = "home.html"
+    }
+  })
+
+
+  const booting = [
+    "Booting Website [|]",
+    "Booting Website [/]",
+    "Booting Website [-]",
+    "Booting Website [\\]",
+    "Booting Website [|]",
+  ];
+
+
+  let i = 0;
+
+  function updateBootingText() {
+    bootingText.innerHTML = `<div style="display: flex; justify-content: space-between;"><span>${booting[i % 5]}</span><span>Press Ctrl-C To Skip Booting Process</span></div>`;
+    i++;
+    if (i < 10) {
+      setTimeout(updateBootingText, 500);
+    } else {
+      setTimeout(() => {
+        bootingText.innerText = "";
+        addBootingInstructions()
+      }, 1000)
+    }
+  }
+
+  updateBootingText();
+
+  var bootingInstructions = [
+    "Initializing system components...",
+    "Loading base system modules...",
+    "Setting up hardware interfaces...",
+    "Verifying filesystem integrity...",
+    "Starting core services...",
+    "Configuring network settings...",
+    "Checking system logs...",
+    "Mounting essential filesystems...",
+    "Starting kernel services...",
+    "Establishing system connections...",
+    "Loading system drivers...",
+    "Initializing core services...",
+    "Setting system parameters...",
+    "Activating network interfaces...",
+    "Running hardware diagnostics...",
+    "Starting system daemons...",
+    "Setting up system clock...",
+    "Configuring environment variables...",
+    "Initializing user space applications...",
+    "Starting critical system processes...",
+    "Checking memory status...",
+    "Loading dynamic libraries...",
+    "Verifying system configurations...",
+    "Preparing system for user login...",
+    "Activating system monitoring...",
+    "Configuring input devices...",
+    "Initializing system utilities...",
+    "Starting user - level services...",
+    "Loading system modules...",
+    "Configuring startup applications...",
+    "Running security checks...",
+    "Initializing system caches...",
+    "Loading system configuration files...",
+    "Checking system health...",
+    "Starting user interface components...",
+    "Setting up logging mechanisms...",
+    "Initializing system resources...",
+    "Running startup scripts...",
+    "Configuring network services...",
+    "Checking for software updates...",
+    "Loading kernel modules...",
+    "Initializing storage devices...",
+    "Setting up user environment...",
+    "Running system optimization...",
+    "Checking system permissions...",
+    "Activating system security protocols...",
+    "Starting essential services...",
+    "Initializing hardware drivers...",
+    "Configuring system preferences...",
+    "Running startup diagnostics...",
+    "Loading system protocols...",
+    "Setting up system backup...",
+    "Initializing network connections...",
+    "Configuring display settings...",
+    "Starting background services...",
+    "Running system integrity checks...",
+    "Initializing file systems...",
+    "Loading device drivers...",
+    "Configuring system services...",
+    "Starting network daemons...",
+    "Checking system resources...",
+    "Initializing audio components...",
+    "Setting up virtual environments...",
+    "Running hardware checks...",
+    "Configuring user profiles...",
+    "Loading configuration modules...",
+    "Initializing system interfaces...",
+    "Running startup services...",
+    "Setting system options...",
+    "Activating display interfaces...",
+    "Configuring system backups...",
+    "Initializing system scripts...",
+    "Checking system connectivity...",
+    "Loading base drivers...",
+    "Running user setup tasks...",
+    "Configuring hardware interfaces...",
+    "Initializing network settings...",
+    "Loading core libraries...",
+    "Checking system integrity...",
+    "Setting up system utilities...",
+    "Running service initialization...",
+    "Configuring environmental settings...",
+    "Starting network management...",
+    "Loading essential modules...",
+    "Initializing system management...",
+    "Running user services...",
+    "Configuring core components...",
+    "Setting up system applications...",
+    "Loading system files...",
+    "Initializing kernel components...",
+    "Running system startup tasks...",
+    "Checking file system status...",
+    "Configuring system preferences...",
+    "Loading startup scripts...",
+    "Initializing virtual components...",
+    "Setting up network protocols...",
+    "Running system health checks...",
+    "Configuring user permissions...",
+    "Loading core configurations...",
+    "Initializing startup services...",
+    "Running system optimizers...",
+    "Configuring user environment...",
+    "Setting up display drivers...",
+    "Loading essential services...",
+    "Initializing network management...",
+    "Running system checks...",
+    "Configuring device drivers...",
+    "Loading base components...",
+    "Initializing user interfaces...",
+    "Setting up core modules...",
+    "Running hardware diagnostics...",
+    "Configuring network settings...",
+    "Initializing system security...",
+    "Loading startup configurations...",
+    "Running system optimizations...",
+    "Setting up system parameters...",
+    "Initializing file systems...",
+    "Checking service status...",
+    "Configuring hardware settings...",
+    "Loading network services...",
+    "Running user setup processes...",
+    "Initializing system protocols...",
+    "Setting up display configurations...",
+    "Configuring system logs...",
+    "Loading essential files...",
+    "Running startup diagnostics...",
+    "Initializing user environment...",
+    "Setting up network drivers...",
+    "Configuring system services...",
+    "Loading kernel components...",
+    "Running hardware checks...",
+    "Initializing core services...",
+    "Configuring system settings...",
+    "Loading system files...",
+    "Running startup tasks...",
+    "Initializing system components...",
+    "Setting up security services...",
+    "Configuring user interfaces...",
+    "Loading network modules...",
+    "Running system management tasks...",
+    "Initializing display settings...",
+    "Setting up core services...",
+    "Loading essential drivers...",
+    "Configuring network interfaces...",
+    "Running startup scripts...",
+    "Initializing system backups...",
+    "Checking service health...",
+    "Configuring device settings...",
+    "Loading base files...",
+    "Running system optimizations...",
+    "Initializing user applications...",
+    "Setting up network protocols...",
+    "Loading kernel services...",
+    "Configuring system parameters...",
+    "Running hardware diagnostics...",
+    "Initializing system interfaces...",
+    "Loading essential components...",
+    "Configuring startup applications...",
+    "Running user setup tasks...",
+    "Initializing network drivers...",
+    "Setting up system logs...",
+    "Loading system files...",
+    "Configuring core services...",
+    "Running startup diagnostics...",
+    "Initializing user space...",
+    "Setting up hardware components...",
+    "Loading network modules...",
+    "Configuring display settings...",
+    "Running system health checks...",
+    "Initializing security protocols...",
+    "Setting up user environment...",
+    "Loading base services...",
+    "Running startup scripts...",
+    "Configuring system backups...",
+    "Initializing system utilities...",
+    "Checking system permissions...",
+    "Loading essential drivers...",
+    "Configuring network settings...",
+    "Running hardware checks...",
+    "Initializing display drivers...",
+    "Setting up core components...",
+    "Loading system applications...",
+    "Configuring system interfaces...",
+    "Running startup processes...",
+    "Initializing network services...",
+    "Setting up user profiles...",
+    "Loading base configurations...",
+    "Running system management tasks...",
+    "Configuring security settings...",
+    "Initializing hardware interfaces...",
+    "Setting up system resources...",
+    "Loading kernel modules...",
+    "Running user setup procedures...",
+    "Configuring network management...",
+    "Initializing display components...",
+    "Loading system protocols...",
+    "Setting up system preferences...",
+    "Running startup diagnostics...",
+    "Initializing core applications...",
+    "Configuring hardware drivers...",
+    "Loading essential files...",
+    "Running system checks...",
+    "Initializing network connections...",
+    "Setting up user interfaces...",
+    "Loading base modules...",
+    "Configuring system backups...",
+    "Running hardware diagnostics...",
+    "Initializing system services...",
+    "Setting up display configurations...",
+    "Loading network drivers...",
+    "Configuring core services...",
+    "Running startup tasks...",
+    "Initializing system management...",
+    "Setting up security components...",
+    "Loading user interfaces...",
+    "Configuring system settings...",
+    "Running system optimizations...",
+    "Initializing core drivers...",
+    "Setting up network protocols...",
+    "Loading base configurations...",
+    "Running hardware checks...",
+    "Configuring display settings...",
+    "Initializing system backups...",
+    "Setting up user environment...",
+    "Loading system files...",
+    "Running startup scripts...",
+    "Initializing network services...",
+    "Configuring system parameters...",
+    "Loading essential services...",
+    "Setting up core components...",
+    "Running user setup tasks...",
+    "Initializing hardware settings...",
+    "Loading kernel services...",
+    "Configuring network interfaces...",
+    "Running system checks...",
+    "Setting up display drivers...",
+    "Initializing system resources...",
+    "Loading base drivers...",
+    "Configuring startup applications...",
+    "Running system health checks...",
+    "Initializing core modules...",
+    "Setting up user profiles...",
+    "Loading network protocols...",
+    "Configuring display settings...",
+    "Running hardware diagnostics...",
+    "Initializing system services...",
+    "Setting up system logs...",
+    "Loading essential files...",
+    "Running startup diagnostics...",
+    "Initializing network drivers...",
+    "Configuring core settings...",
+    "Loading base services...",
+    "Setting up display configurations...",
+    "Running system optimizations...",
+    "Initializing hardware components...",
+    "Loading system applications...",
+    "Configuring network management...",
+    "Running user setup processes...",
+    "Initializing core drivers...",
+    "Setting up system backups...",
+    "Loading essential drivers...",
+    "Configuring system interfaces...",
+    "Running startup tasks...",
+    "Initializing system protocols...",
+    "Setting up user environment...",
+    "Loading base modules...",
+    "Running hardware checks...",
+    "Configuring display drivers...",
+    "Initializing system preferences...",
+    "Loading network modules...",
+    "Setting up core services...",
+    "Running system diagnostics...",
+    "Initializing display components...",
+    "Configuring system settings...",
+    "Loading essential files...",
+    "Running startup diagnostics...",
+    "Initializing network protocols...",
+    "Setting up user profiles...",
+    "Loading system services...",
+    "Configuring hardware interfaces...",
+    "Running system checks...",
+    "Initializing core applications...",
+    "Setting up display configurations...",
+    "Loading base drivers...",
+    "Configuring network settings...",
+    "Running user setup tasks...",
+    "Initializing system resources...",
+    "Loading essential modules...",
+    "Setting up system utilities...",
+    "Running hardware diagnostics...",
+    "Initializing display drivers...",
+    "Configuring core components...",
+    "Loading base configurations...",
+    "Running startup processes...",
+    "Setting up network drivers...",
+    "Initializing system backups...",
+    "Loading system protocols...",
+    "Configuring system settings...",
+    "Running user setup procedures...",
+    "Initializing core services...",
+    "Setting up display settings...",
+    "Loading essential files...",
+    "Running startup diagnostics...",
+    "Configuring network management...",
+    "",
+    "",
+    "System is Booting!"
+  ]
+
+  i = 0
+  let time = 0
+  let dt = 10
+  function addBootingInstructions() {
+    // Insert a new line every dt milliseconds
+    function addLine() {
+      if (i < bootingInstructions.length) {
+        const line = document.createElement('div');
+        line.classList.add('line');
+        line.innerHTML = `[<span style="color: green">OK</span><span>: ${(((time + (Math.random() * 10) / 3).toFixed(4)) * 0.001).toFixed(4)}] ${bootingInstructions[i]}`;
+        bootingText.appendChild(line);
+
+        // Scroll to the bottom to show the latest line
+        bootingText.scrollTop = bootingText.scrollHeight;
+
+        i++;
+        time += dt;
+
+        setTimeout(addLine, dt);
+      } else {
+        setTimeout(() => {
+          window.location.href = "home.html"
+        }, 1000);
+      }
+    }
+    addLine();
+  }
+
+</script>
+
+</html>

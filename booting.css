@@ -1,0 +1,24 @@
+* {
+  font-family: 'BigBlueTermPlus Nerd Font';
+  background-color: #000000;
+  color: white;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#bootingScreen {
+  height: 100vh;
+  width: 100%;
+  overflow: scroll;
+  white-space: pre-wrap;
+  padding-left: 3px;
+}
+
+@keyframes jumpLine {
+  100% {
+    transform: translateY(10px)
+  }
+}
