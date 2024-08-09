@@ -10,135 +10,30 @@ html {
   height: 100%;
 }
 
+input {
+  border: 1px solid white;
+  background-color: #1d1f2a;
+  color: white;
+  width: 30%
+}
+
+
+#sectionPage {
+  height: 65%;
+}
+
 body {
   margin: 0;
   height: 100%;
 }
 
-#headerElements {
-  position: fixed;
-  z-index: 1000;
-  width: 100%
+#terminal {
+  overflow: scroll;
+  background-color: #1d1f2a;
+  height: 35%;
 }
 
-#header {
+.cmd {
   display: flex;
-  flex-direction: row;
-  min-height: 10px;
-  height: 50px;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-
-.headerChild {
-  display: flex;
-  flex-direction: row;
-
-  min-width: fit-content;
-  width: fit-content;
-  min-height: fit-content;
   align-items: center;
-}
-
-.headerChild>* {
-  margin: 0 7px;
-  display: flex;
-}
-
-#leftHeader,
-#rightHeader {
-  margin: 0 10px;
-}
-
-#rightHeader {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-}
-
-#rightHeader>* {
-  margin: 0px 5px;
-}
-
-#cursorContainer {
-  width: fit-content;
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  align-items: center;
-  white-space: nowrap;
-}
-
-#cursor {
-  width: 0px;
-  height: 0px;
-  background-color: white;
-  margin-left: 3px;
-  position: absolute;
-}
-
-#scrollProgressContainer {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-progress {
-  border: none;
-  height: 3px;
-  background-color: #181818;
-  -webkit-appearance: none;
-  appearance: none;
-  margin: 0;
-  width: 100%;
-}
-
-progress::-webkit-progress-bar {
-  background: #ffffff;
-}
-
-progress::-webkit-progress-value {
-  background: #ffffff;
-}
-
-progress::-moz-progress-bar {
-  background: #ffffff;
-}
-
-.progressBarLeft {
-  transform: scale(-1, 1)
-}
-
-#contactInfoButton {
-  color: white;
-  background-color: #181818;
-  border: none;
-}
-
-#contactInfo {
-  position: absolute;
-  color: white;
-  border-radius: 5px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 0;
-  animation-name: popoverOpenAnim;
-  animation-duration: 750ms;
-  top: 60px;
-  background-color: #161616;
-  border: 2px solid white;
-  padding: 5px;
-  font-size: 8px
-}
-
-@keyframes popoverOpenAnim {
-  from {
-    top: 45px;
-    opacity: 0
-  }
-
-  to {
-    opacity: 1
-  }
 }

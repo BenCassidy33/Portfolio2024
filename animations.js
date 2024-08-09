@@ -41,12 +41,44 @@ export function deleteTypewriterEffect(index, text, textElement, cursorElement) 
   });
 }
 
+/**
+    @param {KeyFrame[]} frames
+*/
+async function runAnimations(frames) {
+  while (true) {
+    for (let i = 0; i < frames.length; i++) {
+      await frames[i].runPreDelay();
+      await frames[i].run();
+      await frames[i].runPostDelay();
+    }
 
-document.addEventListener("scroll", (_) => {
-  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  var scrolled = (winScroll / height) * 100;
-  document.getElementById("scrollProgressLeft").value = scrolled
-  document.getElementById("scrollProgressRight").value = scrolled
-})
+  }
+}
+
+
+export class KeyFrame {
+  /**
+    @param {BlobCallback} run
+    @param {number | null} preDelay - delay before the animation starts in ms
+    @param {number | null} postDelay - delay before the animation ends in ms
+  */
+  constructor(run, preDelay = 0, postDelay = 0) {
+    this.run = run;
+    this.preDelay = preDelay;
+    this.postDelay = postDelay;
+  }
+
+  runPreDelay() {
+    return new Promise(resolve => setTimeout(resolve, this.preDelay))
+  }
+
+  runPostDelay() {
+    return new Promise(resolve => setTimeout(resolve, this.postDelay))
+  }
+
+  run() {
+    return this.run()
+  }
+}
+
 
